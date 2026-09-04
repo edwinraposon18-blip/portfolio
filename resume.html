@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Resume - Edwin S. Raposon</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background: #0d181d;
+            color: #ffffff;
+
+            /* Fade-in transition */
+            opacity: 0;
+            animation: fadeInPage 0.8s ease-in-out forwards;
+        }
+
+        /* =========================
+           FADE TRANSITION
+        ========================= */
+
+        @keyframes fadeInPage {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        body.fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 74px;
+            background: #0d181d;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            z-index: 999;
+        }
+
+        .header-container {
+            max-width: 1140px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #149ddd;
+        }
+
+        .nav-menu a.active {
+            color: #149ddd;
+        }
+
+        .nav-menu a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 2px;
+            background: #149ddd;
+        }
+
+
+        /* =========================
+           SOCIAL ICONS
+        ========================= */
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aab4b8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #149ddd;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            padding-top: 115px;
+            padding-bottom: 70px;
+        }
+
+        .container-custom {
+            max-width: 1140px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .section-title .line {
+            width: 44px;
+            height: 3px;
+            background: #149ddd;
+        }
+
+
+        /* =========================
+           RESUME GRID
+        ========================= */
+
+        .resume-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+        }
+
+
+        /* =========================
+           RESUME ITEMS
+        ========================= */
+
+        .resume-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 35px;
+            border-left: 2px solid rgba(20,157,221,0.25);
+        }
+
+        .resume-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #149ddd;
+            border-radius: 50%;
+            background: #0d181d;
+            left: -8px;
+            top: 2px;
+        }
+
+        .resume-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .resume-item h4 {
+            display: inline-block;
+            background: rgba(20,157,221,0.10);
+            color: #149ddd;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .resume-item em {
+            display: block;
+            color: #d8dfe2;
+            margin-bottom: 12px;
+        }
+
+        .resume-item p {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .resume-item ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .resume-item ul li {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-section {
+            margin-top: 10px;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-title span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .progress {
+            height: 10px;
+            background: #152b33;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: #149ddd;
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid rgba(20,157,221,0.25);
+            margin-bottom: 35px;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #149ddd;
+            border-radius: 50%;
+            background: #0d181d;
+            left: -8px;
+            top: 2px;
+        }
+
+        .experience-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .experience-item .date {
+            display: inline-block;
+            padding: 7px 12px;
+            background: rgba(20,157,221,0.10);
+            color: #149ddd;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .experience-item em {
+            display: block;
+            color: #d8dfe2;
+            margin-bottom: 12px;
+        }
+
+        .experience-item ul {
+            padding-left: 20px;
+        }
+
+        .experience-item li {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           TOP BUTTON
+        ========================= */
+
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 42px;
+            height: 42px;
+            background: #149ddd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: #0b82bd;
+            color: white;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .header-container {
+                padding: 0 20px;
+            }
+
+            .resume-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: auto;
+                padding: 18px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 18px;
+            }
+
+            main {
+                padding-top: 145px;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
+            }
+
+            .social-links {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="resume.html" class="active">
+                    Resume
+                </a>
+
+                <a href="portfolio.html">
+                    Portfolio
+                </a>
+
+            </nav>
+
+
+            <!-- FACEBOOK + INSTAGRAM -->
+
+            <div class="social-links">
+
+                <!-- Facebook -->
+
+                <a href="https://www.facebook.com/edwin.s.raposon"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   title="Facebook"
+                   aria-label="Facebook">
+
+                    <i class="fa-brands fa-facebook"></i>
+
+                </a>
+
+
+                <!-- Instagram -->
+
+                <a href="https://www.instagram.com/itsantinoo/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   title="Instagram"
+                   aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main>
+
+        <div class="container-custom">
+
+            <div class="resume-row">
+
+
+                <!-- =========================
+                     LEFT COLUMN
+                ========================= -->
+
+                <div>
+
+
+                    <!-- EDUCATION -->
+
+                    <section>
+
+                        <div class="section-title">
+
+                            <h2>
+                                Education
+                            </h2>
+
+                            <div class="line"></div>
+
+                        </div>
+
+
+                        <!-- TERTIARY -->
+
+                        <div class="resume-item">
+
+                            <h3>
+                                Tertiary
+                            </h3>
+
+                            <h4>
+                                2023 - 2026...
+                            </h4>
+
+                            <em>
+                                Mabini Colleges INC.
+                            </em>
+
+                            <p>
+                                BACHELOR OF SCIENCE IN COMPUTER SCIENCE
+                            </p>
+
+                        </div>
+
+
+                        <!-- SENIOR HIGH SCHOOL -->
+
+                        <div class="resume-item">
+
+                            <h3>
+                                Senior High School
+                            </h3>
+
+                            <h4>
+                                2021 - 2023
+                            </h4>
+
+                            <em>
+                                Northills Colleges of Asia INC.
+                            </em>
+
+                            <p>
+                                INFORMATION AND COMMUNICATION
+                                TECHNOLOGY (ICT)
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================
+                         PROFESSIONAL SKILLS
+                    ========================= -->
+
+                    <section class="skills-section">
+
+                        <div class="section-title">
+
+                            <h2>
+                                Professional Skills
+                            </h2>
+
+                            <div class="line"></div>
+
+                        </div>
+
+
+                        <!-- VIDEO EDITING -->
+
+                        <div class="skill">
+
+                            <div class="skill-title">
+
+                                <span>
+                                    Video Editing
+                                </span>
+
+                                <span>
+                                    95%
+                                </span>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar"
+                                     role="progressbar"
+                                     style="width:95%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PHOTO EDITING -->
+
+                        <div class="skill">
+
+                            <div class="skill-title">
+
+                                <span>
+                                    Photo Editing
+                                </span>
+
+                                <span>
+                                    90%
+                                </span>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar"
+                                     role="progressbar"
+                                     style="width:90%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LOGO MAKER -->
+
+                        <div class="skill">
+
+                            <div class="skill-title">
+
+                                <span>
+                                    Logo Maker
+                                </span>
+
+                                <span>
+                                    90%
+                                </span>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar"
+                                     role="progressbar"
+                                     style="width:90%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DRIVING -->
+
+                        <div class="skill">
+
+                            <div class="skill-title">
+
+                                <span>
+                                    Driving (Motorcycle/Tricycle)
+                                </span>
+
+                                <span>
+                                    85%
+                                </span>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar"
+                                     role="progressbar"
+                                     style="width:85%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- =========================
+                     RIGHT COLUMN
+                ========================= -->
+
+                <div>
+
+
+                    <!-- PROFESSIONAL EXPERIENCE -->
+
+                    <section>
+
+                        <div class="section-title">
+
+                            <h2>
+                                Professional Experience
+                            </h2>
+
+                            <div class="line"></div>
+
+                        </div>
+
+
+                        <!-- VIDEO EDITOR -->
+
+                        <div class="experience-item">
+
+                            <h3>
+                                Video Editor
+                            </h3>
+
+                            <div class="date">
+                                2023 - Present
+                            </div>
+
+                            <em>
+                                Freelance Video Editor
+                            </em>
+
+                            <ul>
+
+                                <li>
+                                    Editing videos, vlogs, reels,
+                                    and short-form content for
+                                    social media.
+                                </li>
+
+                                <li>
+                                    Cutting and arranging clips,
+                                    adding transitions, music,
+                                    captions, and visual effects.
+                                </li>
+
+                                <li>
+                                    Creating engaging video content
+                                    based on the client's needs.
+                                </li>
+
+                                <li>
+                                    Preparing videos in formats
+                                    suitable for Facebook,
+                                    Instagram, TikTok, and YouTube.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- PHOTO EDITOR -->
+
+                        <div class="experience-item">
+
+                            <h3>
+                                Photo Editor
+                            </h3>
+
+                            <div class="date">
+                                2023 - Present
+                            </div>
+
+                            <em>
+                                Freelance Photo Editor
+                            </em>
+
+                            <ul>
+
+                                <li>
+                                    Editing and enhancing photos
+                                    for personal and promotional use.
+                                </li>
+
+                                <li>
+                                    Adjusting brightness, contrast,
+                                    colors, sharpness, and composition.
+                                </li>
+
+                                <li>
+                                    Removing unwanted elements
+                                    and improving overall image quality.
+                                </li>
+
+                                <li>
+                                    Preparing images for social media
+                                    posts and digital presentations.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- LOGO DESIGNER -->
+
+                        <div class="experience-item">
+
+                            <h3>
+                                Graphic &amp; Logo Designer
+                            </h3>
+
+                            <div class="date">
+                                2023 - Present
+                            </div>
+
+                            <em>
+                                Freelance Graphic Designer
+                            </em>
+
+                            <ul>
+
+                                <li>
+                                    Creating logos and visual identities
+                                    for personal projects and clients.
+                                </li>
+
+                                <li>
+                                    Designing simple and professional
+                                    graphics for social media and
+                                    promotional materials.
+                                </li>
+
+                                <li>
+                                    Developing creative concepts based
+                                    on the required style and purpose.
+                                </li>
+
+                                <li>
+                                    Preparing final designs for
+                                    digital use and presentation.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- DRIVER -->
+
+                        <div class="experience-item">
+
+                            <h3>
+                                Driver / Delivery Assistant
+                            </h3>
+
+                            <div class="date">
+                                2023 - Present
+                            </div>
+
+                            <em>
+                                Motorcycle / Tricycle
+                            </em>
+
+                            <ul>
+
+                                <li>
+                                    Driving motorcycle and tricycle
+                                    safely and responsibly.
+                                </li>
+
+                                <li>
+                                    Delivering items and assisting
+                                    with transportation tasks.
+                                </li>
+
+                                <li>
+                                    Maintaining awareness of road
+                                    safety and traffic regulations.
+                                </li>
+
+                                <li>
+                                    Managing time efficiently to
+                                    complete assigned trips and tasks.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         BACK TO TOP
+    ========================= -->
+
+    <a href="#"
+       class="back-to-top"
+       title="Back to top"
+       aria-label="Back to top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </a>
+
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- =========================
+         BACK TO TOP + PAGE TRANSITION
+    ========================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const backToTop =
+                document.querySelector(".back-to-top");
+
+
+            /* =========================
+               BACK TO TOP
+            ========================= */
+
+            window.addEventListener("scroll", function () {
+
+                backToTop.style.display = "flex";
+
+            });
+
+
+            backToTop.addEventListener("click", function (event) {
+
+                event.preventDefault();
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            });
+
+
+            /* =========================
+               PAGE FADE TRANSITION
+            ========================= */
+
+            document.querySelectorAll("a").forEach(function (link) {
+
+                const href = link.getAttribute("href");
+
+
+                /*
+                 * Fade transition only for
+                 * local HTML pages.
+                 */
+
+                if (
+                    href &&
+                    !href.startsWith("#") &&
+                    !href.startsWith("http") &&
+                    !href.startsWith("mailto:") &&
+                    !href.startsWith("javascript:")
+                ) {
+
+                    link.addEventListener("click", function (event) {
+
+                        event.preventDefault();
+
+                        document.body.classList.add("fade-out");
+
+
+                        setTimeout(function () {
+
+                            window.location.href = href;
+
+                        }, 500);
+
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
